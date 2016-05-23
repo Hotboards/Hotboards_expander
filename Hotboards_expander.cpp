@@ -142,6 +142,26 @@ void Hotboards_expander::write( uint8_t pin, bool val )
     writeReg( REG_OLAT, olat );
 }
 
+uint8_t Hotboards_expander::read( uint8_t pin )
+{
+    uint8_t i;
+    uint8_t val = 0;
+    uint8_t gpio = readReg( REG_GPIO );
+
+    if( pin == 0xff )
+    {
+        for( i=0 ; i<_pins ; i++ )
+        {
+            bitWrite( val, i, bitRead( gpio, i ) );
+        }
+    }
+    else
+    {
+        val = bitRead( gpio, pin );
+    }
+    return val;
+}
+
 void Hotboards_expander::mode( bool mode )
 {
     uint8_t i;
