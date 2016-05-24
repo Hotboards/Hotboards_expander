@@ -1,4 +1,4 @@
-/* output.ino
+/* port_output.ino
  * Author Diego Perez (http://hotboards.org)
  * control the entire port, yes 8 pins as outputs
  */

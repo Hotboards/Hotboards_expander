@@ -1,4 +1,4 @@
-/* output.ino
+/* pins_output.ino
  * Author Diego Perez (http://hotboards.org)
  * control 4 pins individualy or all at once
  */
