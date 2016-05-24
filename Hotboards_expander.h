@@ -52,11 +52,11 @@ class Hotboards_expander
     public :
         /** Create Hotboards_expander instance for one pin
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
+          * @param pin0 physical expander pin used as pin 0
           *
           * Example:
           * @code
-          *   // instance one pin on pin 5
+          *   // instance one pin on physical pin  5
           *   Hotboards_expander pin( 5 );
           * @endcode
           */
@@ -64,12 +64,12 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for two pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
           *
           * Example:
           * @code
-          *   // instance two pins on pin 2 and 3
+          *   // instance two pins on physical pins 2 and 3
           *   Hotboards_expander port( 2, 3 );
           * @endcode
           */
@@ -77,13 +77,13 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for three pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
-          * @param pin2 physical pin used as pin 2
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
+          * @param pin2 physical expander pin used as pin 2
           *
           * Example:
           * @code
-          *   // instance three pins on pin 1, 2 and 3
+          *   // instance three pins on physical pins 1, 2 and 3
           *   Hotboards_expander port( 1, 2, 3 );
           * @endcode
           */
@@ -91,14 +91,14 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for four pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
-          * @param pin2 physical pin used as pin 2
-          * @param pin3 physical pin used as pin 3
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
+          * @param pin2 physical expander pin used as pin 2
+          * @param pin3 physical expander pin used as pin 3
           *
           * Example:
           * @code
-          *   // instance four pins on pin 0, 1, 2 and 3
+          *   // instance four pins on physical pins 0, 1, 2 and 3
           *   Hotboards_expander port( 0, 1, 2, 3 );
           * @endcode
           */
@@ -106,15 +106,15 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for five pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
-          * @param pin2 physical pin used as pin 2
-          * @param pin3 physical pin used as pin 3
-          * @param pin4 physical pin used as pin 4
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
+          * @param pin2 physical expander pin used as pin 2
+          * @param pin3 physical expander pin used as pin 3
+          * @param pin4 physical expander pin used as pin 4
           *
           * Example:
           * @code
-          *   // instance five pins on pin 0, 1, 2, 3 and 4
+          *   // instance five pins on physical pins 0, 1, 2, 3 and 4
           *   Hotboards_expander port( 0, 1, 2, 3, 4 );
           * @endcode
           */
@@ -122,16 +122,16 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for six pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
-          * @param pin2 physical pin used as pin 2
-          * @param pin3 physical pin used as pin 3
-          * @param pin4 physical pin used as pin 4
-          * @param pin5 physical pin used as pin 5
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
+          * @param pin2 physical expander pin used as pin 2
+          * @param pin3 physical expander pin used as pin 3
+          * @param pin4 physical expander pin used as pin 4
+          * @param pin5 physical expander pin used as pin 5
           *
           * Example:
           * @code
-          *   // instance six pins on pin 0, 1, 2, 3, 4 and 5
+          *   // instance six pins on physical pins 0, 1, 2, 3, 4 and 5
           *   Hotboards_expander port( 0, 1, 2, 3, 4, 5 );
           * @endcode
           */
@@ -139,17 +139,17 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for seven pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
-          * @param pin2 physical pin used as pin 2
-          * @param pin3 physical pin used as pin 3
-          * @param pin4 physical pin used as pin 4
-          * @param pin5 physical pin used as pin 5
-          * @param pin6 physical pin used as pin 6
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
+          * @param pin2 physical expander pin used as pin 2
+          * @param pin3 physical expander pin used as pin 3
+          * @param pin4 physical expander pin used as pin 4
+          * @param pin5 physical expander pin used as pin 5
+          * @param pin6 physical expander pin used as pin 6
           *
           * Example:
           * @code
-          *   // instance seven pins on pin 0, 1, 2, 3, 4, 5 and 6
+          *   // instance seven pins on physical pins 0, 1, 2, 3, 4, 5 and 6
           *   Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6 );
           * @endcode
           */
@@ -157,55 +157,105 @@ class Hotboards_expander
 
         /** Create Hotboards_expander instance for eight pins
           * @param address expansion port i2c physical address
-          * @param pin0 physical pin used as pin 0
-          * @param pin1 physical pin used as pin 1
-          * @param pin2 physical pin used as pin 2
-          * @param pin3 physical pin used as pin 3
-          * @param pin4 physical pin used as pin 4
-          * @param pin5 physical pin used as pin 5
-          * @param pin6 physical pin used as pin 6
-          * @param pin7 physical pin used as pin 7
+          * @param pin0 physical expander pin used as pin 0
+          * @param pin1 physical expander pin used as pin 1
+          * @param pin2 physical expander pin used as pin 2
+          * @param pin3 physical expander pin used as pin 3
+          * @param pin4 physical expander pin used as pin 4
+          * @param pin5 physical expander pin used as pin 5
+          * @param pin6 physical expander pin used as pin 6
+          * @param pin7 physical expander pin used as pin 7
           *
           * Example:
           * @code
-          *   // instance eight pins on pin 0, 1, 2, 3, 4, 5, 6 and 7
+          *   // instance eight pins on physical pins 0, 1, 2, 3, 4, 5, 6 and 7
           *   Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6, 7 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2, int pin3, int pin4, int pin5, int pin6, int pin7 );
         bool begin( void );
-  
-        /**
+
+        /** Change the port mode
+          * @param mode port mode INPUT, OUTPUT and PULLUP
+          *
+          * Example:
+          * @code
+          *   // instance one pin on pin 7 and write a 1 (only boolean values 0 or 1)
+          *   Hotboards_expander pin( 7 );
+          *   pin.mode( OUTPUT );
+          *
+          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
+          *   Hotboards_expander port( 2, 3, 4, 5 );
+          *   // the four pins as configured as outputs
+          *   port.mode( INPUT );
+          * @endcode
           */
         void mode( bool mode );
-        
-        /**
+
+        /** Change the pin mode
+          * @param mode pin mode INPUT, OUTPUT and PULLUP
+          *
+          * Example:
+          * @code
+          *   // instance one pin on pin 7 and set the pin as OUTPUT
+          *   Hotboards_expander pin( 7 );
+          *   pin.mode( 0, OUTPUT );
+          *
+          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
+          *   Hotboards_expander port( 2, 3, 4, 5 );
+          *   // the pin0 (expander pin 2) as output
+          *   port.mode( 0, OUTPUT );
+          *   // the pin2 (expander pin 4) as input
+          *   port.mode( 2, INPUT );
+          * @endcode
           */
         void mode( uint8_t pin, bool mode );
 
         /** Write a value on the entire instance port
-          * @param val value to be written
+          * @param val value to be written (0 or 1)
           *
           * Example:
           * @code
-          *   // instance one pin on pin 7 and write a 1 (aceptara valores de 0 a 1)
+          *   // instance one pin on pin 7 and write a 1 (only boolean values 0 or 1)
           *   Hotboards_expander pin( 7 );
           *   pin.mode( OUTPUT );
           *   pin.write( 1 );
           *
-          *   // instance a 4 pins bus (pin2->led3 ..... pin5->led0)
+          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
           *   Hotboards_expander port( 2, 3, 4, 5 );
+          *   // the four pins as configured as outputs
           *   port.mode( OUTPUT );
           *   // write the 10 value (it will accept values from 0 to 15)
           *   port.write( 10 );
           *
-          *   // instance an 8 leds bus (pin4->led7 ..... pin3->led0)
-          *   Hotboards_leds leds( 4, 3, 2, 6, 5, 7, 8, 9 );
+          *   // instance an 8 pins port (pin 0->pin0 ..... pin 7->pin7)
+          *   Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6, 7 );
           *   // write the 134 value (it will accept values from 0 to 255)
-          *   leds.write( 134 );
+          *   port.write( 134 );
           * @endcode
           */
         void write( uint8_t val );
+
+        /** Write a boolean value on single pin
+          * @param pin the port pin to be written
+          * @param val value to be written
+          *
+          * Example:
+          * @code
+          *   // instance one pin on pin 7 and write a 1 (only boolean values 0 or 1)
+          *   Hotboards_expander pin( 7 );
+          *   pin.mode( OUTPUT );
+          *   pin.write( 0, 1 ); // the first pin is always indetified as 0
+          *
+          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
+          *   Hotboards_expander port( 2, 3, 4, 5 );
+          *   // the four pins as configured as outputs
+          *   port.mode( OUTPUT );
+          *   // write a '1' on pin2 (pin 4) and a '0' on pin3 (pin 5)
+          *   port.write( 2, 1 );
+          *   port.write( 3, 0 );
+          * @endcode
+          */
         void write( uint8_t pin, bool val );
         uint8_t read( uint8_t pin=0xff );
 
