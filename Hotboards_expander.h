@@ -1,7 +1,6 @@
 /*
-  Hotboards_expander.h - Driver to read and control a serial (i2c) port expander, The Microchip
-  MCP23008 is the digital sensor to control, can be read it, set its resolution, shutdown and also
-  set alarms.
+  Hotboards_expander.h - Driver to read and control a serial (i2c) port expansion chip, The Microchip
+  MCP23008 can manipulate up to 8 digital I/O with interrupt detection and pullups configuration.
   Hotboards eeprom board (http://hotboards.org)
   Created by Diego Perez, March 19, 2016.
   Released into the public domain.
@@ -25,7 +24,7 @@ typedef enum
 } _eExpander;
 
 /** Hotboards_expander class.
- *  Used to control general purpose leds
+ *  Used to control Microchip MCP23008 expansion port
  *
  * Example:
  * @code
@@ -184,8 +183,8 @@ class Hotboards_expander
           *   Hotboards_expander pin( 7 );
           *   pin.mode( OUTPUT );
           *
-          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
-          *   Hotboards_expander port( 2, 3, 4, 5 );
+          *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
+          *   Hotboards_expander port( 0, 1, 2, 3 );
           *   // the four pins as configured as outputs
           *   port.mode( INPUT );
           * @endcode
@@ -201,11 +200,11 @@ class Hotboards_expander
           *   Hotboards_expander pin( 7 );
           *   pin.mode( 0, OUTPUT );
           *
-          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
-          *   Hotboards_expander port( 2, 3, 4, 5 );
-          *   // the pin0 (expander pin 2) as output
+          *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
+          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   // the pin0 (expander pin 0) as output
           *   port.mode( 0, OUTPUT );
-          *   // the pin2 (expander pin 4) as input
+          *   // the pin2 (expander pin 2) as input
           *   port.mode( 2, INPUT );
           * @endcode
           */
@@ -221,8 +220,8 @@ class Hotboards_expander
           *   pin.mode( OUTPUT );
           *   pin.write( 1 );
           *
-          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
-          *   Hotboards_expander port( 2, 3, 4, 5 );
+          *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
+          *   Hotboards_expander port( 0, 1, 2, 3 );
           *   // the four pins as configured as outputs
           *   port.mode( OUTPUT );
           *   // write the 10 value (it will accept values from 0 to 15)
@@ -247,16 +246,42 @@ class Hotboards_expander
           *   pin.mode( OUTPUT );
           *   pin.write( 0, 1 ); // the first pin is always indetified as 0
           *
-          *   // instance a 4 pins port (pin 2->pin0 ..... pin 5->pin4)
-          *   Hotboards_expander port( 2, 3, 4, 5 );
-          *   // the four pins as configured as outputs
+          *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
+          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   // the four pins are configured as outputs
           *   port.mode( OUTPUT );
-          *   // write a '1' on pin2 (pin 4) and a '0' on pin3 (pin 5)
+          *   // write a '1' on pin2 (pin 2) and a '0' on pin3 (pin 3)
           *   port.write( 2, 1 );
           *   port.write( 3, 0 );
           * @endcode
           */
         void write( uint8_t pin, bool val );
+
+        /** Read a single pin or the entire defined port
+          * @param pin the port pin to be read
+          * @return value read it
+          *
+          * Example:
+          * @code
+          *   // instance one pin on pin 7 and read its state (0 o 1)
+          *   Hotboards_expander pin( 7 );
+          *   bool val = pin.read( );
+          *
+          *   // instance an 8 pins port (pin 0->pin0 ..... pin 7->pin7)
+          *   Hotboards_switches port( 0, 1, 2, 3, 4, 5, 6, 7 );
+          *   // read the port value (from 0 to 255)
+          *   uint8_t val = port.read( );
+          *
+          *   // instance a 4 pin port (pin 0->pin0 ..... pin 3->pin3)
+          *   Hotboards_switches port( 0, 1, 2, 3 );
+          *   // read pin 1
+          *   bool val1 = port.read( 1 );
+          *   // read pin 0
+          *   bool val2 = port.read( 0 );
+          *   //read the entire port (4 pins)
+          *   uint8_t val = port.read( );
+          * @endcode
+          */
         uint8_t read( uint8_t pin=0xff );
 
     private:
