@@ -56,7 +56,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance one pin on physical pin  5
-          *   Hotboards_expander pin( 5 );
+          *   Hotboards_expander pin( Expander_7, 5 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0 );
@@ -69,7 +69,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance two pins on physical pins 2 and 3
-          *   Hotboards_expander port( 2, 3 );
+          *   Hotboards_expander port( Expander_7, 2, 3 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1 );
@@ -83,7 +83,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance three pins on physical pins 1, 2 and 3
-          *   Hotboards_expander port( 1, 2, 3 );
+          *   Hotboards_expander port( Expander_7, 1, 2, 3 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2 );
@@ -98,7 +98,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance four pins on physical pins 0, 1, 2 and 3
-          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2, int pin3 );
@@ -114,7 +114,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance five pins on physical pins 0, 1, 2, 3 and 4
-          *   Hotboards_expander port( 0, 1, 2, 3, 4 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3, 4 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2, int pin3, int pin4 );
@@ -131,7 +131,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance six pins on physical pins 0, 1, 2, 3, 4 and 5
-          *   Hotboards_expander port( 0, 1, 2, 3, 4, 5 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3, 4, 5 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2, int pin3, int pin4, int pin5 );
@@ -149,7 +149,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance seven pins on physical pins 0, 1, 2, 3, 4, 5 and 6
-          *   Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3, 4, 5, 6 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2, int pin3, int pin4, int pin5, int pin6 );
@@ -168,7 +168,7 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance eight pins on physical pins 0, 1, 2, 3, 4, 5, 6 and 7
-          *   Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6, 7 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3, 4, 5, 6, 7 );
           * @endcode
           */
         Hotboards_expander( uint8_t address, int pin0, int pin1, int pin2, int pin3, int pin4, int pin5, int pin6, int pin7 );
@@ -180,13 +180,13 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance one pin on pin 7 and write a 1 (only boolean values 0 or 1)
-          *   Hotboards_expander pin( 7 );
+          *   Hotboards_expander pin( Expander_7, 7 );
           *   pin.mode( OUTPUT );
           *
           *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
-          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3 );
           *   // the four pins as configured as outputs
-          *   port.mode( INPUT );
+          *   port.mode( OUTPUT );
           * @endcode
           */
         void mode( bool mode );
@@ -197,11 +197,11 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance one pin on pin 7 and set the pin as OUTPUT
-          *   Hotboards_expander pin( 7 );
+          *   Hotboards_expander pin( Expander_7, 7 );
           *   pin.mode( 0, OUTPUT );
           *
           *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
-          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3 );
           *   // the pin0 (expander pin 0) as output
           *   port.mode( 0, OUTPUT );
           *   // the pin2 (expander pin 2) as input
@@ -216,19 +216,21 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance one pin on pin 7 and write a 1 (only boolean values 0 or 1)
-          *   Hotboards_expander pin( 7 );
+          *   Hotboards_expander pin( Expander_7, 7 );
           *   pin.mode( OUTPUT );
           *   pin.write( 1 );
           *
           *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
-          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3 );
           *   // the four pins as configured as outputs
           *   port.mode( OUTPUT );
           *   // write the 10 value (it will accept values from 0 to 15)
           *   port.write( 10 );
           *
           *   // instance an 8 pins port (pin 0->pin0 ..... pin 7->pin7)
-          *   Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6, 7 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3, 4, 5, 6, 7 );
+          *   // the 8 pins are configured as outputs
+          *   port.mode( OUTPUT );
           *   // write the 134 value (it will accept values from 0 to 255)
           *   port.write( 134 );
           * @endcode
@@ -242,12 +244,12 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance one pin on pin 7 and write a 1 (only boolean values 0 or 1)
-          *   Hotboards_expander pin( 7 );
+          *   Hotboards_expander pin( Expander_7, 7 );
           *   pin.mode( OUTPUT );
           *   pin.write( 0, 1 ); // the first pin is always indetified as 0
           *
           *   // instance a 4 pins port (pin 0->pin0 ..... pin 3->pin3)
-          *   Hotboards_expander port( 0, 1, 2, 3 );
+          *   Hotboards_expander port( Expander_7, 0, 1, 2, 3 );
           *   // the four pins are configured as outputs
           *   port.mode( OUTPUT );
           *   // write a '1' on pin2 (pin 2) and a '0' on pin3 (pin 3)
@@ -264,16 +266,16 @@ class Hotboards_expander
           * Example:
           * @code
           *   // instance one pin on pin 7 and read its state (0 o 1)
-          *   Hotboards_expander pin( 7 );
+          *   Hotboards_expander pin( Expander_7, 7 );
           *   bool val = pin.read( );
           *
           *   // instance an 8 pins port (pin 0->pin0 ..... pin 7->pin7)
-          *   Hotboards_switches port( 0, 1, 2, 3, 4, 5, 6, 7 );
+          *   Hotboards_switches port( Expander_7, 0, 1, 2, 3, 4, 5, 6, 7 );
           *   // read the port value (from 0 to 255)
           *   uint8_t val = port.read( );
           *
           *   // instance a 4 pin port (pin 0->pin0 ..... pin 3->pin3)
-          *   Hotboards_switches port( 0, 1, 2, 3 );
+          *   Hotboards_switches port( Expander_7, 0, 1, 2, 3 );
           *   // read pin 1
           *   bool val1 = port.read( 1 );
           *   // read pin 0
