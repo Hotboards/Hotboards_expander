@@ -91,19 +91,19 @@ port.write( 3, 0 );
 Lee el estado de los pines en el puerto creado. Puede ser el valor de un solo pin o de todo el puerto.
 
 ``` cpp
-/* creamos un pin en pin 7 y leemos su estado (0 o 1)
+/* creamos un pin en pin 7 y leemos su estado (0 o 1) */
 Hotboards_expander pin( 7 );
 bool val = pin.read( );
 
-//  creamos un puerto de 8 pines (pin 0->pin0 ..... pin 7->pin7)
+/* creamos un puerto de 8 pines (pin 0->pin0 ..... pin 7->pin7) */
 Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6, 7 );
-// leemos el valor del puerto (valores de 0 a 255)
+/* leemos el valor del puerto (valores de 0 a 255) */
 uint8_t val = port.read( );
 
-// creamos un puerto de 4 pins (pin 0->pin0 ..... pin 3->pin3)
+/* creamos un puerto de 4 pins (pin 0->pin0 ..... pin 3->pin3) */
 Hotboards_expander port( 0, 1, 2, 3 );
-// leemos el estado del pin 1
+/* leemos el estado del pin 1 */
 bool val1 = port.write( 1 );
-// leemos el estado del pin 0
+/* leemos el estado del pin 0 */
 bool val2 = port.write( 0 );
 ```
