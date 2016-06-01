@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ARDUINO=~/arduino-1.6.7/./arduino
+BOARD=arduino:avr:uno
+PROJECT=port_input
+
+
+if [ $1 = "flash" ]; then
+	$ARDUINO --upload --board $BOARD $PROJECT.ino
+elif [ $1 = "make" ]; then
+	$ARDUINO --verify --board $BOARD $PROJECT.ino
+else
+	echo "Wrong parameters"
+fi
