@@ -1,4 +1,4 @@
-/* port_output.ino
+/* port_input.ino
  * Author Diego Perez (http://hotboards.org)
  * control the entire port, yes 8 pins as inputs
  */
@@ -16,7 +16,7 @@ void setup( void )
     Wire.begin( );
     // reset the internal registers that control the entire port
     port.begin( );
-    // set the entire port as output
+    // set the entire port as inputs (8 pins)
     port.mode( INPUT );
     // we need the serial port on this example
     Serial.begin( 9600 );
@@ -24,9 +24,11 @@ void setup( void )
 
 void loop( void )
 {
-    uint8_t val;
-    val = port.read( );
+    // read the entire port
+    uint8_t val = port.read( );
+    // send to serial the value read it
     Serial.print( "port = " );
     Serial.println( val, BIN );
+    // a little delay, there is no need to read so often
     delay( 200 );
 }

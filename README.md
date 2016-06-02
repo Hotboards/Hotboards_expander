@@ -96,14 +96,27 @@ Hotboards_expander pin( 7 );
 bool val = pin.read( );
 
 /* creamos un puerto de 8 pines (pin 0->pin0 ..... pin 7->pin7) */
-Hotboards_expander port( 0, 1, 2, 3, 4, 5, 6, 7 );
+Hotboards_expander port( Expander_7, 0, 1, 2, 3, 4, 5, 6, 7 );
 /* leemos el valor del puerto (valores de 0 a 255) */
 uint8_t val = port.read( );
 
 /* creamos un puerto de 4 pins (pin 0->pin0 ..... pin 3->pin3) */
-Hotboards_expander port( 0, 1, 2, 3 );
+Hotboards_expander port( Expander_7, 0, 1, 2, 3 );
 /* leemos el estado del pin 1 */
 bool val1 = port.write( 1 );
 /* leemos el estado del pin 0 */
 bool val2 = port.write( 0 );
 ```
+
+Ejemplos
+==========
+
+- [Escribiendo en un pin](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/output/output.ino)
+- [Escribiendo en el puerto entero](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/port_output/port_output.ino)
+- [Escribiendo en pines separados](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/pins_output/pins_output.ino)
+- [Creando grupos de pines separados](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/multi_ports/multi_ports.ino)
+- [Leyendo un pin del puerto](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/input/input.ino)
+- [Leyendo el puerto entero](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/port_input/port_input.ino)
+- [Combinando entradas y salidas](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/input_output/input_output.ino)
+- [Manejando dos expansores](https://github.com/Hotboards/Hotboards_expander/blob/master/examples/ports/ports.ino)
+

@@ -25,6 +25,7 @@ void setup( void )
 
 void loop( void )
 {
+    // since our port is only delcared with one pin, we don't need to specify the pin number to read
     if( pin.read( ) == 0u )
     {
         Serial.print( "pin in LOW state\n\r" );
